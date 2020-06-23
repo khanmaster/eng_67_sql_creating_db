@@ -1,4 +1,4 @@
-creating DB using Azure Studio
+# Creating DB using Azure Studio
 
 ``` sql 
 -- Create a new database called 'SHAHRUKH'
@@ -12,4 +12,26 @@ IF NOT EXISTS (
         WHERE [name] = N'SHAHRUKH'
 )
 CREATE DATABASE SHNorthwind
+```
+
+### Creating a table
+
+``` sql
+
+-- Create a new table called '[TableName]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[TableName]', 'U') IS NOT NULL
+DROP TABLE [dbo].[TableName]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[TableName]
+(
+    [Id] INT NOT NULL PRIMARY KEY, -- Primary Key column
+    [ColumnName2] NVARCHAR(50) NOT NULL,
+    [ColumnName3] NVARCHAR(50) NOT NULL
+    -- Specify more columns here
+);
+GO
+
+
 ```
